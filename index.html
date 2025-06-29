@@ -1,197 +1,226 @@
-<!-- HTML đầy đủ tích hợp Zalo và Facebook Messenger -->
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thầy Khanh - Bổ túc lái xe | Học lái xe an toàn, hiệu quả</title>
-  <meta name="description" content="Dịch vụ bổ túc tay lái ô tô uy tín cùng Thầy Khanh. Học thực hành 1 kèm 1, vững vàng tay lái chỉ sau vài buổi.">
-  <meta name="keywords" content="bổ túc lái xe, học lái xe ô tô, bổ túc tay lái, học thực hành lái xe, thầy Khanh dạy lái xe">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bổ túc lái xe HCM - Thầy Khanh</title>
+  <meta name="description" content="Dịch vụ bổ túc tay lái uy tín tại TP.HCM. Học 1 kèm 1, linh hoạt thời gian, an toàn - hiệu quả, đặc biệt luôn vui vẻ cùng Thầy Khanh.">
+  <meta name="keywords" content="bổ túc lái xe, học lái xe HCM, thầy Khanh, lái xe an toàn, lái xe B2, học lại lái xe, dợt tay lái">
   <meta name="author" content="Thầy Khanh">
-  <link rel="canonical" href="https://botuclaixehcm.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-color: #0275d8;
-      --accent-color: #5cb85c;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: var(--main-color);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      color: var(--main-color);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
-    .package, .testimonial, .cta, .form-box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .cta {
-      background: var(--accent-color);
-      color: white;
-      text-align: center;
-      font-size: 1.2rem;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 5px 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .testimonial {
-      border-left: 5px solid var(--main-color);
-      font-style: italic;
-    }
-    .floating-contact, .floating-zalo {
+    body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: url('https://raw.githubusercontent.com/ngokhanhnbk/botuclaixehcm.github.io/refs/heads/main/anhnena.png') center/cover no-repeat; color: #33CCFF; padding: 80px 20px; text-align: center; }
+    header h1 { font-size: 3em; margin-bottom: 10px; }
+	header h2 { font-size: 2.5em; margin-bottom: 10px; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .section-title { font-size: 1.8em; margin-bottom: 20px; text-align: center; }
+	.intro-box {
+  background-color: #009999;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: white;
+}
+    .intro p, .contact p, .form-section p { font-size: 1.1em; line-height: 1.6; text-align: center; }
+    .gallery { display: flex; overflow-x: auto; gap: 10px; }
+    .gallery img { height: 200px; border-radius: 10px; }
+    iframe { width: 100%; height: 315px; border: none; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 12px; border: 1px solid #ccc; text-align: center; }
+    .form-section form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto; }
+    input, textarea { padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; }
+    button { padding: 10px; background: #007BFF; color: white; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .map-container iframe { height: 300px; width: 100%; border: none; border-radius: 10px; }
+    footer { background: #333; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+    .floating-buttons {
       position: fixed;
-      right: 20px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    .floating-contact {
       bottom: 20px;
-      background: var(--main-color);
-    }
-    .floating-zalo {
-      bottom: 70px;
-      background: #0084ff;
-    }
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    form button {
-      background-color: var(--main-color);
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    form button:hover {
-      background-color: #025aa5;
-    }
-    .qr-codes {
+      right: 20px;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+    .floating-buttons a {
+      display: block;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 50px;
+      font-size: 1em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .floating-buttons a.call { background: #007BFF; }
+    .floating-buttons a.youtube { background: #ff0000; }
+    .floating-buttons a.youtube:hover { background: #cc0000; }
+    .hotline-floating {
+      position: fixed;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ff4d4f;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 10px 0 0 10px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 9999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .hotline-floating a {
+      color: white;
+      text-decoration: none;
+    }
+    .hotline-floating:hover {
+      background: #d9363e;
+    }
+    .qr-zalo {
+      display: flex;
       justify-content: center;
       margin-top: 20px;
     }
-    .qr-codes img {
-      max-width: 120px;
+    .qr-zalo img {
+      max-width: 180px;
       border-radius: 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
     }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
+  
+    .floating-buttons a.facebook {
+      background: #1877f2;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
-      .cta, .package, .testimonial, .form-box {
-        font-size: 1rem;
-      }
+    .floating-buttons a.facebook:hover {
+      background: #145dbf;
     }
-  </style>
+	.section-divider {
+  border: 1px solid #000;
+  width: 75%;
+  margin: 40px auto;
+}
+  
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bổ túc lái xe HCM - Thầy Khanh",
+  "url": "https://botuclaixehcm.com",
+  "telephone": "+84914635151",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "TP.HCM",
+    "addressCountry": "VN"
+  }
+}
+</script>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
 
-  <header>
-    <h1>Thầy Khanh - Bổ túc lái xe</h1>
-    <p>Tự tin cầm vô lăng chỉ sau vài buổi học thực tế</p>
-  </header>
+<header>
+  <h1>BỔ TÚC LÁI XE HCM – Thầy Khanh ( DUI DẺ HÔNG QUẠO )</h1>
+  <h2>CAM KẾT HỌC VIÊN TỰ TIN CẦM LÁI SAU KHI BỔ TÚC</h2>
+</header>
+<div class="hotline-floating">
+  <a href="tel:0914635151">📞 Hotline: 0914 63 5151</a>
+</div>
+<section class="intro">
+  <h2 class="section-title">GIỚI THIỆU</h2>
+  <div class="intro-box">
+  <p>Với nhiều năm kinh nghiệm trong nghề, Thầy Khanh chuyên bổ túc tay lái ô tô cho học viên sau khi thi bằng.</p>
+  <p>Lịch học linh hoạt, địa điểm thực tế, đảm bảo vững vàng tay lái, tự tin ôm xe sau khi bổ túc.</p>
+  <p>Phương châm của Thầy: Hướng dẫn tận tâm, Chia sẻ kinh nghiệm, Luôn luôn vui vẻ</p>
+  </div>
+</section>
+<hr class="section-divider">
+<section class="gallery-section">
+  <h2 class="section-title">ẢNH & VIDEO THỰC TẾ</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200?text=Ảnh+1" alt="Ảnh 1">
+    <img src="https://via.placeholder.com/300x200?text=Ảnh+2" alt="Ảnh 2">
+    <img src="https://via.placeholder.com/300x200?text=Ảnh+3" alt="Ảnh 3">
+  </div>
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/UqoWtaAq3JA?si=4uPS2uQm-DvFSjVp" title="Video học lái xe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+<hr class="section-divider">
+<section class="pricing">
+  <h2 class="section-title">BẢNG GIÁ HỌC PHÍ</h2>
+  <div class="table-container"><table>
+    <tr><th>Gói học</th><th>Số buổi</th><th>Giá</th></tr>
+    <tr><td>Gói 1</td><td>1 buổi ( 4 giờ )</td><td>1.000.000đ</td></tr>
+    <tr><td>Gói 2</td><td>2 buổi ( 8 giờ )</td><td>2.000.000đ</td></tr>
+    <tr><td>Gói 3</td><td>Theo yêu cầu</td><td>Chỉ từ 200k/giờ</td></tr>
+  </table></div>
+</section>
+<hr class="section-divider">
+<section class="form-section">
+  <h2 class="section-title">ĐĂNG KÝ TƯ VẤN</h2>
+  <p>Vui lòng để lại email, SĐT Thầy Khanh sẽ liên hệ hỗ trợ trong thời gian sớm nhất.</p>
+  
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Họ và tên" required>
+  <input type="tel" name="sdt" placeholder="Số điện thoại" required>
+  <input type="email" name="email" placeholder="Email liên hệ" required>
+  <textarea name="message" placeholder="Nội dung cần tư vấn" rows="4" required></textarea>
+  <button type="submit">Gửi đăng ký</button>
+  <p id="form-response" style="display:none; color: green; margin-top: 10px;">✅ Gửi thành công! Cảm ơn bạn.</p>
+</form>
 
-  <!-- Nội dung chính giữ nguyên như trước -->
-  <!-- ... (các phần khác không thay đổi) -->
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch("https://script.google.com/macros/s/AKfycbzqGgtsC0CVronLdfb_v5ZizRkrbwiB4g_XJ71HEblEqm7WpLRdV4zPAB8RpimBnkHkYA/exec", {
+    method: "POST",
+    body: data
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("form-response").style.display = "block";
+      form.reset();
+    }
+  });
+});
+</script>
 
-  <footer>
-    <p>&copy; 2025 - Thầy Khanh - Bổ túc lái xe</p>
-    <div class="contact">
-      <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a>
-    </div>
-  </footer>
+</section>
+<hr class="section-divider">
+<section class="contact">
+  <h2 class="section-title">LIÊN HỆ VÀ ĐỊA ĐIỂM</h2>
+  <p><b>📞 0914 63 5151 - Thầy Khanh  ( Dui dẻ hông quạo )</b></p>
+  <div class="qr-zalo">
+    <img src="https://raw.githubusercontent.com/ngokhanhnbk/botuclaixehcm.github.io/refs/heads/main/x0pSrh.png" alt="QR Zalo">
+  </div>
+  <br>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.1445908960013!2d106.67852762738838!3d10.865595761268445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295d7e4a3217%3A0x78185360902922d3!2sC%C3%B4ng%20ty%20TNHH%20T134!5e0!3m2!1svi!2s!4v1751180007997!5m2!1svi!2s" loading="lazy"></iframe>
+  </div>
+</section>
 
-  <a href="tel:0901234567" class="floating-contact">📞 Gọi ngay</a>
-  <a href="https://zalo.me/0914635151" class="floating-zalo">💬 Nhắn Zalo</a>
+<footer>
+  <p>&copy; 2025 Thầy Khanh - Bổ túc lái xe HCM.</p>
+</footer>
 
-  <!-- Facebook Messenger Plugin chat -->
-  <div id="fb-root"></div>
-  <div id="fb-customer-chat" class="fb-customerchat"></div>
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "61552612186989");
-    chatbox.setAttribute("attribution", "biz_inbox");
-  </script>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v19.0'
-      });
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+<div class="floating-buttons">
+  <a class="youtube" href="https://www.youtube.com/@KhanhsVlog92" target="_blank">▶️ YouTube</a>
+  <a class="facebook" href="https://www.facebook.com/ngobaokhanh92" target="_blank">📘 Facebook</a>
+  <a class="call" href="tel:0914635151">📞 Gọi ngay</a>
+  <a href="https://zalo.me/0914635151" target="_blank">💬 Nhắn Zalo</a>
+</div>
 
 </body>
 </html>
