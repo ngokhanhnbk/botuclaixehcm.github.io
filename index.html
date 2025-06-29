@@ -29,6 +29,110 @@
     .intro p, .contact p, .form-section p { font-size: 1.1em; line-height: 1.6; text-align: center; }
     .gallery { display: flex; overflow-x: auto; gap: 10px; }
     .gallery img { height: 200px; border-radius: 10px; }
+.review-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.review-slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.review-slider {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.review-card {
+  flex: 0 0 33.3333%;
+  box-sizing: border-box;
+  padding: 16px;
+  margin: 0 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.review-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.review-card p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.review-card strong {
+  font-size: 0.95em;
+  color: #009999;
+}
+
+.review-nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #009999;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.review-nav.left { left: 0; }
+.review-nav.right { right: 0; }
+
+@media (max-width: 768px) {
+  .review-card {
+    flex: 0 0 100%;
+    margin: 10px 0;
+  }
+}
+
+.video-section {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-box {
+  flex: 0 0 300px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.video-box p {
+  font-size: 0.95em;
+  color: #333;
+}
+
     iframe { width: 100%; height: 315px; border: none; border-radius: 10px; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { padding: 12px; border: 1px solid #ccc; text-align: center; }
@@ -141,16 +245,63 @@
   </div>
 </section>
 <hr class="section-divider">
-<section class="gallery-section">
-  <h2 class="section-title">ẢNH & VIDEO THỰC TẾ</h2>
-  <div class="gallery">
-    <img loading="lazy" src="https://via.placeholder.com/300x200?text=Ảnh+1" alt="Ảnh 1">
-    <img loading="lazy" src="https://via.placeholder.com/300x200?text=Ảnh+2" alt="Ảnh 2">
-    <img loading="lazy" src="https://via.placeholder.com/300x200?text=Ảnh+3" alt="Ảnh 3">
+ 
+<section class="reviews-section">
+  <h2 class="section-title">ĐÁNH GIÁ TỪ HỌC VIÊN</h2>
+  <div class="review-slider-wrapper">
+    <button class="review-nav left" onclick="prevReview()">❮</button>
+
+    <div class="review-slider-container">
+      <div class="review-slider" id="reviewSlider">
+        <div class="review-card">
+          <img src="https://via.placeholder.com/80x80.png?text=H1" alt="HV1">
+          <p>"Thầy Khanh dạy dễ hiểu, sát thực tế. Giúp mình tự tin chạy xe ngoài đường."</p>
+          <strong>- Nguyễn Văn A</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://via.placeholder.com/80x80.png?text=H2" alt="HV2">
+          <p>"Xe mới, không khí học vui vẻ, mình cải thiện kỹ năng rất nhanh."</p>
+          <strong>- Trần Thị B</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://via.placeholder.com/80x80.png?text=H3" alt="HV3">
+          <p>"Thầy có tâm, lịch học linh hoạt, chỉ dẫn rõ từng lỗi sai."</p>
+          <strong>- Lê Văn C</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://via.placeholder.com/80x80.png?text=H4" alt="HV4">
+          <p>"Từng sợ lái xe nhưng giờ đã chạy xa nhờ học với thầy Khanh."</p>
+          <strong>- Phạm Thảo D</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://via.placeholder.com/80x80.png?text=H5" alt="HV5">
+          <p>"Chỉ trong vài buổi mình đã nắm lại kỹ năng sau 5 năm không lái xe."</p>
+          <strong>- Hồ Minh E</strong>
+        </div>
+      </div>
+    </div>
+
+    <button class="review-nav right" onclick="nextReview()">❯</button>
   </div>
-  <br>
-  <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/UqoWtaAq3JA?si=4uPS2uQm-DvFSjVp" title="Video học lái xe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </section>
+<hr class="section-divider">
+<section class="video-section">
+  <h2 class="section-title">VIDEO THỰC TẾ</h2>
+  <div class="video-grid">
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/UqoWtaAq3JA?si=4uPS2uQm-DvFSjVp" title="Video 1" frameborder="0" allowfullscreen></iframe>
+      <p>Buổi học 1: Học viên luyện phản xạ trong đường đông</p>
+    </div>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/UqoWtaAq3JA?si=4uPS2uQm-DvFSjVp" title="Video 2" frameborder="0" allowfullscreen></iframe>
+      <p>Buổi học 2: Thực hành rẽ trái - rẽ phải an toàn</p>
+    </div>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/UqoWtaAq3JA?si=4uPS2uQm-DvFSjVp" title="Video 3" frameborder="0" allowfullscreen></iframe>
+      <p>Buổi học 3: Vào bãi xe thực tế</p>
+    </div>
+  </div>
+</section> 
 <hr class="section-divider">
 <section class="pricing">
   <h2 class="section-title">BẢNG GIÁ HỌC PHÍ</h2>
@@ -172,11 +323,8 @@
   <input type="email" name="email" placeholder="Email liên hệ" required>
   <textarea name="message" placeholder="Nội dung cần tư vấn" rows="4" required></textarea>
   <button type="submit">Gửi đăng ký</button>
-
-<p id="form-response" style="display:none; color: green; margin-top: 10px;">✅ Gửi thành công! Cảm ơn bạn.</p>
 <p id="form-loading" style="display:none; color: blue; margin-top: 10px;">⏳ Đang gửi...</p>
-
-  <p id="form-response" style="display:none; color: green; margin-top: 10px;">✅ Gửi thành công! Cảm ơn bạn.</p>
+<p id="form-response" style="display:none; color: green; margin-top: 10px;">✅ Gửi thành công! Cảm ơn bạn.</p>
 </form>
 
 <script>
@@ -222,5 +370,30 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
   <a class="facebook" href="https://www.facebook.com/ngobaokhanh92" target="_blank">📘 Facebook</a>
   <a href="https://zalo.me/0914635151" target="_blank">💬 Nhắn Zalo</a>
   <a class="hotline-floating" href="tel:0914635151">📞 Hotline: 0914 63 5151</a>
+</div>  
+<script>
+  let currentIndex = 0;
+  const slider = document.getElementById('reviewSlider');
+  const totalItems = slider.children.length;
+  const visibleCards = 3;
+  const maxIndex = totalItems - visibleCards;
+
+  function updateSlider() {
+    const translateX = -(currentIndex * (100 / visibleCards));
+    slider.style.transform = `translateX(${translateX}%)`;
+  }
+
+  function nextReview() {
+    currentIndex = (currentIndex + 1 > maxIndex) ? 0 : currentIndex + 1;
+    updateSlider();
+  }
+
+  function prevReview() {
+    currentIndex = (currentIndex - 1 < 0) ? maxIndex : currentIndex - 1;
+    updateSlider();
+  }
+
+  setInterval(nextReview, 10000); // Tự động cuộn mỗi 10 giây
+</script>
 </body>
 </html>
