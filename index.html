@@ -60,25 +60,21 @@
     .floating-buttons a.call { background: #007BFF; }
     .floating-buttons a.youtube { background: #ff0000; }
     .floating-buttons a.youtube:hover { background: #cc0000; }
-    .hotline-floating {
-      position: fixed;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
+    .floating-buttons a.hotline-floating {
       background: #ff4d4f;
       color: #fff;
       padding: 12px 16px;
       border-radius: 10px 0 0 10px;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
       z-index: 9999;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .hotline-floating a {
+    .floating-buttons a.hotline-floating a {
       color: white;
       text-decoration: none;
     }
-    .hotline-floating:hover {
+    .floating-buttons a.hotline-floating:hover {
       background: #d9363e;
     }
     .qr-zalo {
@@ -134,9 +130,7 @@
   <h1>BỔ TÚC LÁI XE HCM – Thầy Khanh ( DUI DẺ HÔNG QUẠO )</h1>
   <h2>CAM KẾT HỌC VIÊN TỰ TIN CẦM LÁI SAU KHI BỔ TÚC</h2>
 </header>
-<div class="hotline-floating">
-  <a href="tel:0914635151">📞 Hotline: 0914 63 5151</a>
-</div>
+
 <section class="intro">
   <h2 class="section-title">GIỚI THIỆU</h2>
   <div class="intro-box">
@@ -200,7 +194,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
 </section>
 <hr class="section-divider">
 <section class="contact">
-  <h2 class="section-title">LIÊN HỆ</h2>
+  <h2 class="section-title">LIÊN HỆ VÀ ĐỊA ĐIỂM</h2>
   <p><b>📞 0914 63 5151 - Thầy Khanh  ( Dui dẻ hông quạo )</b></p>
   <div class="qr-zalo">
     <img src="https://raw.githubusercontent.com/ngokhanhnbk/botuclaixehcm.github.io/refs/heads/main/x0pSrh.png" alt="QR Zalo">
@@ -218,9 +212,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
 <div class="floating-buttons">
   <a class="youtube" href="https://www.youtube.com/@KhanhsVlog92" target="_blank">▶️ YouTube</a>
   <a class="facebook" href="https://www.facebook.com/ngobaokhanh92" target="_blank">📘 Facebook</a>
-  <a class="call" href="tel:0914635151">📞 Gọi ngay</a>
   <a href="https://zalo.me/0914635151" target="_blank">💬 Nhắn Zalo</a>
-</div>
-
+  <a class="hotline-floating" href="tel:0914635151">📞 Hotline: 0914 63 5151</a>
 </body>
 </html>
